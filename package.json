@@ -1,0 +1,30 @@
+{
+  "name": "p5js-camera-face",
+  "version": "0.1.0",
+  "description": "See face, control sketch.",
+  "browser": "dist/out.js",
+  "module": "es2022",
+  "target": "es2022",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outdir=dist --target=es2020,chrome117,safari17,firefox115,edge126",
+    "build-examples": "npm run build && cp dist/index.js examples/",
+    "serve": "npm run build-examples && npx serve examples",
+    "test": "jest"
+  },
+  "author": "adam bachman @abachman",
+  "license": "MIT",
+  "dependencies": {
+    "@mediapipe/face_detection": "^0.4.1646425229",
+    "@tensorflow-models/face-detection": "^1.0.2",
+    "@tensorflow/tfjs-backend-webgl": "^4.4.0",
+    "@tensorflow/tfjs-converter": "^4.4.0",
+    "@tensorflow/tfjs-core": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/p5": "^1.7.6",
+    "esbuild": "0.23.0",
+    "p5": "^1.10.0",
+    "prettier": "3.3.3",
+    "typescript": "^5.5.4"
+  }
+}
